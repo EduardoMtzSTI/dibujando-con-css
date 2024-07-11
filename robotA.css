@@ -1,0 +1,240 @@
+/* [ROBOT-A] ******************************************************************************************************************/
+/********************************************************************************************************************************
+https://www.pinterest.com.mx/pin/51580358222869202/visual-search/?x=16&y=16&w=532&h=391&cropSource=6&surfaceType=flashlight
+*********************************************************************************************************************************/
+
+.robotA {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  --primary-color: #e3e5e1;
+  --primary-shadow: #b3b0a9;
+  --face: #292345;
+  --face-shadow: #17152e;
+  --shadow: #f6f6f5;
+
+  & .head {
+    background: var(--primary-color);
+    position: absolute;
+    top: 15%;
+    width: 45%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25% 25% / 50% 50%;
+    z-index: 10;
+    overflow: hidden;
+    animation: robotA-movement 8s 1s infinite;
+
+    &::before {
+      content: "";
+      background: var(--primary-shadow);
+      position: absolute;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+    }
+
+    & .face {
+      background: var(--face);
+      position: relative;
+      width: 80%;
+      height: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25% 25% / 50% 50%;
+      box-shadow: inset 3px 13px 0px -5px var(--face-shadow);
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        background: var(--face-shadow);
+        position: absolute;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+      }
+
+      & .mouth {
+        background: #fff;
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        width: 20px;
+        height: 18%;
+        transform: translate(-50%, 0);
+        border-radius: 10% 10% 50% 50%;
+      }
+
+      & .eyes-containter {
+        position: relative;
+        top: -5%;
+        width: 60%;
+        height: 30%;
+        & .eye {
+          background: #8ad1c0;
+          position: absolute;
+          width: 25%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        & .eye.r {
+          right: 0px;
+        }
+      }
+    }
+
+    & .triangle {
+      background: var(--face);
+      position: absolute;
+      bottom: 5%;
+      left: 35%;
+      width: 10%;
+      height: 10%;
+      clip-path: polygon(25% 0, 0% 100%, 90% 0);
+    }
+  }
+
+  & .ears-container {
+    position: absolute;
+    top: 25%;
+    width: 50%;
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    animation: robotA-movement 8s 1s infinite;
+
+    & .ear {
+      background: #b3b0a9;
+      width: 10%;
+      height: 100%;
+      border-radius: 25% 25% / 50% 50%;
+    }
+  }
+
+  & .body {
+    background: var(--primary-shadow);
+    position: absolute;
+    top: 50%;
+    width: 25%;
+    height: 35%;
+    border-radius: 30% 30% 50% 50% / 20% 20% 75% 75%;
+    overflow: hidden;
+    z-index: 1;
+    animation: robotA-movement 8s infinite;
+
+    &::before {
+      content: "";
+      background: var(--primary-color);
+      position: absolute;
+      left: 0%;
+      top: 10%;
+      width: 50%;
+      height: 100%;
+      border-radius: 0% 20% 0% 0% / 0% 10% 0% 0%;
+    }
+
+    &::after {
+      content: "";
+      background: var(--primary-shadow);
+      position: absolute;
+      left: 20%;
+      top: 25%;
+      width: 10%;
+      height: 10%;
+      border-radius: 50%;
+    }
+  }
+
+  & .arms-container {
+    border-top: transparent;
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 25%;
+    animation: robotA-movement 8s infinite;
+
+    & .arm {
+      background: var(--primary-shadow);
+      position: absolute;
+      top: -3%;
+      right: 5%;
+      width: 30%;
+      height: 100%;
+      border-radius: 20% 80% 10% 90% / 20% 90% 10% 80%;
+      transform: rotate(-20deg);
+    }
+
+    & .r {
+      background: var(--primary-color);
+      left: 5%;
+      border-radius: 80% 10% 90% 10% / 90% 20% 80% 10%;
+      transform: rotate(20deg);
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        background: var(--primary-shadow);
+        position: absolute;
+        left: 40%;
+        top: 30%;
+        width: 50%;
+        height: 60%;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  & .shadow {
+    background: #dfdfd9;
+    position: absolute;
+    bottom: 5%;
+    left: 40%;
+    width: 20%;
+    height: 5%;
+    border-radius: 50%;
+    animation: robotA-shadow 8s infinite;
+    //filter: drop-shadow(0px 25px 3px #5c5c5c);
+  }
+}
+
+@keyframes robotA-movement {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes robotA-shadow {
+  0% {
+    transform: scaleX(1);
+  }
+  25% {
+    transform: scaleX(1.1);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  75% {
+    transform: scaleX(1.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

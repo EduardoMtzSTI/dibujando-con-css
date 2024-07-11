@@ -1,0 +1,375 @@
+/* [BURGER] ******************************************************************************************************************/
+/********************************************************************************************************************************
+https://img.freepik.com/vector-premium/conjunto-diseno-lindo-poster-comida-rapida-personaje-chatarra-kawaii-cartoon_134878-87.jpg?w=740
+*********************************************************************************************************************************/
+
+.burger {
+  --bread-color: #ffc561;
+  --lettuce-color: #27b589;
+  --tomato-color: #fa3f41;
+  --cheese-color: #fee9be;
+  --meat-color: #96684e;
+  --meat-light-color: #ae785e;
+  --eye-color: #5f1f38;
+  --mouth-color: #67254c;
+  --tongue-color: #e9477f;
+  --blush-color: #fe7982;
+  --freckle-1-color: #f6409c;
+  --freckle-2-color: #86dcff;
+  --freckle-3-color: #ffedf1;
+
+  position: relative;
+  top: 10%;
+  left: 50%;
+  width: 15rem;
+  height: 17rem;
+  display: flex;
+  justify-content: center;
+  transform: translate(-50%);
+  filter: drop-shadow(0.3rem 0 0 #fbb) drop-shadow(-0.3rem 0 0 #fbb)
+    drop-shadow(0 0.3rem 0 #fbb) drop-shadow(0 -0.3rem 0 #fbb)
+    drop-shadow(0 0 0.6rem);
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 15rem;
+    height: 17rem;
+    //filter: drop-shadow(0 0 4px);
+    z-index: 0;
+  }
+
+  & .top-bread {
+    background: linear-gradient(var(--bread-color) 85%, #ff8d8b 85%);
+    position: absolute;
+    top: 1%;
+    width: 14rem;
+    height: 5rem;
+    border: solid 0.12rem;
+    border-radius: 40% 40% 10% 10% / 70% 70% 25% 26%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .freckle {
+      background: var(--freckle-1-color);
+      position: absolute;
+      left: 13%;
+      top: 69%;
+      width: 0.9rem;
+      height: 0.3rem;
+      border-radius: 50%;
+      box-shadow: 8.9rem -2.5rem 0px var(--freckle-1-color);
+
+      &::before {
+        content: "";
+        background: var(--freckle-2-color);
+        position: absolute;
+        left: 2.1rem;
+        top: 0.3rem;
+        width: 1rem;
+        height: 0.25rem;
+        border-radius: 50% 50% 50% 50% / 100% 100% 100% 100%;
+        box-shadow: 7rem -1.9rem 0px var(--freckle-2-color);
+        z-index: 10;
+      }
+
+      &::after {
+        content: "";
+        background: var(--freckle-3-color);
+        position: absolute;
+        left: 0.9rem;
+        top: -2rem;
+        width: 1rem;
+        height: 0.2rem;
+        border-radius: 50% 50% 50% 50% / 100% 100% 100% 100%;
+        box-shadow: 9rem 2rem 0px 0.01rem var(--freckle-3-color);
+        z-index: 10;
+      }
+    }
+
+    & .eyes-content {
+      position: relative;
+      width: 3.5rem;
+      height: 1rem;
+      top: 22%;
+      display: flex;
+      justify-content: space-between;
+
+      & .eye {
+        width: 1rem;
+        height: 1rem;
+        border: solid 0.19rem var(--eye-color);
+        border-bottom: transparent;
+        border-right: transparent;
+        border-radius: 15%;
+        transform: rotate(45deg);
+      }
+    }
+
+    & .mouth {
+      background: var(--mouth-color);
+      position: relative;
+      top: 35%;
+      width: 1.1rem;
+      height: 0.9rem;
+      border-radius: 20% 20% 80% 80% / 20% 20% 100% 100%;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        background: var(--tongue-color);
+        position: absolute;
+        right: -1%;
+        bottom: -45%;
+        width: 0.9rem;
+        height: 1.1rem;
+        border-radius: 50%;
+      }
+    }
+
+    & .blush {
+      background: var(--blush-color);
+      position: absolute;
+      left: 30%;
+      top: 40%;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      box-shadow: 4.5rem 0px 0px 0px var(--blush-color);
+    }
+  }
+
+  & .lettuce {
+    background: var(--lettuce-color);
+    position: absolute;
+    top: 31%;
+    width: 14rem;
+    height: 1.5rem;
+    border: solid 0.12rem;
+    border-radius: 0% 8% 3% 12% / 47% 54% 23% 100%;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      background: #2eeaaf;
+      position: absolute;
+      top: 20%;
+      left: 9%;
+      width: 30%;
+      height: 30%;
+      border-radius: 10% 10% 10% 10% / 100% 100% 100% 100%;
+      box-shadow: 6.7em 0.5em 0px #2eeaaf;
+    }
+
+    & .leaft {
+      background: var(--lettuce-color);
+      position: absolute;
+      border: solid 0.12rem;
+      border-top: transparent;
+      box-shadow: 0px -0.1rem 0px 0px var(--lettuce-color);
+      z-index: 2;
+    }
+
+    & .leaft:nth-child(1) {
+      left: 26%;
+      bottom: -0.7rem;
+      width: 1.1rem;
+      height: 0.6rem;
+      border-radius: 18% 0% 49% 51% / 0% 0% 100% 100%;
+    }
+
+    & .leaft:nth-child(2) {
+      left: 60%;
+      bottom: -0.6rem;
+      width: 3rem;
+      height: 0.5rem;
+      border-radius: 0% 0% 0% 32% / 19% 0% 100% 99%;
+    }
+
+    & .leaft:nth-child(3) {
+      left: 70%;
+      bottom: -1.1rem;
+      width: 1.6rem;
+      height: 0.5rem;
+      border-radius: 18% 0% 49% 51% / 0% 0% 100% 100%;
+      box-shadow: 0px 0px 0px 0px var(--lettuce-color);
+    }
+
+    & .leaft:nth-child(4) {
+      left: 12%;
+      top: -1.1rem;
+      width: 1.3rem;
+      height: 1rem;
+      border-radius: 0% 0% 80% 86% / 2% 0% 100% 100%;
+      transform: rotate(180deg);
+    }
+
+    & .leaft:nth-child(5) {
+      left: 39%;
+      top: -1.1rem;
+      width: 2.7rem;
+      height: 1rem;
+      border-radius: 0% 0% 25% 25% / 0% 0% 65% 65%;
+      transform: rotate(180deg);
+    }
+
+    & .leaft:nth-child(6) {
+      left: 69%;
+      top: -0.9rem;
+      width: 1.5rem;
+      height: 0.8rem;
+      border-radius: 0% 0% 25% 25% / 0% 0% 65% 65%;
+      transform: rotate(180deg);
+    }
+  }
+
+  & .tomato-container {
+    position: absolute;
+    top: 40%;
+    width: 13rem;
+    height: 1.5rem;
+    //border: solid 0.12rem;
+
+    & .tomato {
+      background: linear-gradient(var(--tomato-color) 50%, #cb3d2d 50%);
+      position: absolute;
+      width: 48%;
+      height: 100%;
+      border: solid 0.12rem;
+      border-radius: 10% 10% 10% 10% / 47% 50% 50% 52%;
+    }
+    & .tomato.r {
+      right: 0%;
+      height: 100%;
+    }
+  }
+
+  & .cheese {
+    background: var(--cheese-color);
+    position: absolute;
+    top: 49%;
+    width: 15rem;
+    height: 1.2rem;
+    border: solid 0.12rem;
+    border-radius: 0% 10% 0% 10% / 0% 100% 0% 100%;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      background: var(--cheese-color);
+      position: absolute;
+      left: 16%;
+      bottom: -2.8rem;
+      width: 1.5rem;
+      height: 2.7rem;
+      border: solid 0.12rem;
+      border-top: transparent;
+      border-radius: 0% 0% 50% 50% / 1% 0% 30% 30%;
+      box-shadow: 0px -0.1rem 0px 0px var(--cheese-color);
+      z-index: 2;
+    }
+
+    &::after {
+      content: "";
+      background: var(--cheese-color);
+      position: absolute;
+      left: 47%;
+      bottom: -1.4rem;
+      width: 1rem;
+      height: 1.3rem;
+      border: solid 0.12rem;
+      border-top: transparent;
+      border-radius: 0% 0% 50% 50% / 1% 0% 30% 30%;
+      box-shadow: 0px -0.1rem 0px 0px var(--cheese-color);
+      z-index: 2;
+    }
+  }
+
+  & .meat {
+    background: var(--meat-color);
+    position: absolute;
+    top: 56%;
+    width: 14rem;
+    height: 2.5rem;
+    border: solid 0.12rem;
+    border-radius: 8% 8% 8% 8% / 50% 50% 50% 59%;
+
+    &::before {
+      content: "";
+      background: var(--meat-light-color);
+      position: absolute;
+      top: 20%;
+      left: 28%;
+      width: 18%;
+      height: 22%;
+      border-radius: 10% 10% 10% 10% / 100% 100% 100% 100%;
+      box-shadow: 4.2rem 0px 0px 0px var(--meat-light-color);
+    }
+
+    &::after {
+      content: "";
+      background: var(--meat-light-color);
+      position: absolute;
+      top: 65%;
+      left: 28%;
+      width: 23%;
+      height: 22%;
+      border-radius: 10% 10% 10% 10% / 100% 100% 100% 100%;
+    }
+  }
+
+  & .bottom-bread {
+    background: var(--bread-color);
+    position: absolute;
+    top: 71%;
+    width: 13rem;
+    height: 2.8rem;
+    border: solid 0.12rem;
+    border-radius: 4% 4% 10% 10% / 50% 50% 50% 50%;
+    box-shadow: inset 0px -0.7rem 0px -0.2rem #ebad2d;
+
+    & .freckle {
+      background: #000;
+      position: absolute;
+      width: 0.9rem;
+      height: 0.3rem;
+      border-radius: 50% 50% 50% 50% / 100% 100% 100% 100%;
+    }
+
+    & .freckle:nth-child(1) {
+      background: var(--freckle-2-color);
+      left: 9%;
+      top: 30%;
+      width: 1.4rem;
+      height: 0.3rem;
+    }
+
+    & .freckle:nth-child(2) {
+      background: var(--freckle-2-color);
+      left: 73%;
+      top: 20%;
+      width: 1.6rem;
+      height: 0.5rem;
+    }
+
+    & .freckle:nth-child(3) {
+      background: var(--freckle-1-color);
+      left: 28%;
+      top: 10%;
+      width: 0.8rem;
+      height: 0.27rem;
+    }
+
+    & .freckle:nth-child(4) {
+      background: var(--freckle-3-color);
+      left: 46%;
+      top: 45%;
+      width: 0.8rem;
+      height: 0.27rem;
+    }
+  }
+}

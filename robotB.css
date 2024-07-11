@@ -1,0 +1,490 @@
+/* [ROBOT-B] ******************************************************************************************************************/
+/********************************************************************************************************************************
+https://us.123rf.com/450wm/kahovsky/kahovsky1709/kahovsky170900244/85714721-robot-sonriente-feliz-bot-chat-dise%C3%B1o-plano-moderno-del-ejemplo-de-la-historieta-del-car%C3%A1cter-del.jpg?ver=6
+*********************************************************************************************************************************/
+
+.robotB {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  --main-color: #cce1e6;
+  --main-shadow: #b5dbdc;
+  --secondary-color: #585858;
+  --secondary-shadow: #474747;
+  --blue: #48bff7;
+  --blue-shadow: #28aced;
+  --shadow: #eeeeee;
+
+  & .head {
+    background: var(--main-color);
+    position: absolute;
+    top: 15%;
+    width: 25%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40% 40% 50% 50% / 40% 40% 50% 50%;
+    z-index: 2;
+
+    & .antenna {
+      background: var(--main-shadow);
+      position: absolute;
+      top: -6%;
+      width: 50%;
+      height: 50%;
+      border-radius: 40% 40% 50% 50% / 40% 40% 50% 50%;
+
+      &::before {
+        content: "";
+        background: linear-gradient(
+          to top,
+          var(--main-color) 0%,
+          var(--main-shadow) 0%,
+          var(--main-shadow) 20%,
+          var(--main-color) 20%,
+          var(--main-color) 80%,
+          var(--main-shadow) 80%
+        );
+        position: absolute;
+        left: 50%;
+        top: -16%;
+        width: 8%;
+        height: 16%;
+        transform: translate(-50%);
+      }
+
+      &::after {
+        content: "";
+        background: radial-gradient(
+          circle at 80% 70%,
+          var(--main-shadow) 40%,
+          var(--main-color) 30%
+        );
+        position: absolute;
+        left: 50%;
+        top: -50%;
+        width: 30%;
+        height: 35%;
+        border-radius: 50%;
+        transform: translate(-50%);
+      }
+    }
+
+    & .face {
+      background: var(--main-color);
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 40% 40% 50% 50% / 40% 40% 50% 50%;
+      z-index: 1;
+
+      & .eyes-containter {
+        background: linear-gradient(
+          to right,
+          var(--secondary-color) 50%,
+          var(--secondary-shadow) 50%
+        );
+        top: 30%;
+        width: 70%;
+        height: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10% 10% 10% 10%/ 40% 40% 40% 40%;
+
+        & .eye {
+          position: absolute;
+          left: 25%;
+          width: 8%;
+          height: 12%;
+          border: solid 1px var(--blue);
+          border-radius: 50%;
+          animation: robotB-eyes 10s 1s infinite;
+        }
+
+        & .eye.r {
+          left: 65%;
+        }
+      }
+
+      & .mouth {
+        background: #fff;
+        position: absolute;
+        top: 75%;
+        width: 15%;
+        height: 10%;
+        border-radius: 0% 0% 50% 50% / 0% 0% 72% 75%;
+      }
+    }
+
+    & .ears-container {
+      position: absolute;
+      left: -4%;
+      right: -4%;
+      top: 40%;
+      height: 20%;
+      display: flex;
+      justify-content: space-between;
+
+      & .ear {
+        background: var(--main-shadow);
+        width: 10%;
+        height: 100%;
+        border-radius: 30%;
+      }
+    }
+  }
+
+  & .neck {
+    background: linear-gradient(
+      to top,
+      var(--main-color) 0%,
+      var(--main-shadow) 0%,
+      var(--main-shadow) 20%,
+      var(--main-color) 20%,
+      var(--main-color) 80%,
+      var(--main-shadow) 80%
+    );
+    position: absolute;
+    left: 50%;
+    bottom: 57%;
+    width: 2%;
+    height: 3%;
+    transform: translate(-50%);
+    z-index: 1;
+
+    &::before {
+      content: "";
+      background: var(--main-shadow);
+      position: absolute;
+      left: -60%;
+      bottom: -90%;
+      width: 220%;
+      height: 90%;
+      border-radius: 25%;
+    }
+  }
+
+  & .body {
+    background: var(--main-color);
+    position: absolute;
+    left: 50%;
+    bottom: 30.5%;
+    width: 20%;
+    height: 25%;
+    border-radius: 40% 40% 50% 49% / 30% 30% 70% 70%;
+    transform: translate(-50%);
+    z-index: 10;
+
+    &::before {
+      content: "";
+      background: var(--main-shadow);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 50%;
+      height: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      content: "";
+      background: linear-gradient(
+        -45deg,
+        var(--blue-shadow) 30%,
+        var(--blue) 30%,
+        var(--blue) 45%,
+        var(--blue-shadow) 45%,
+        var(--blue-shadow) 55%,
+        var(--blue) 55%,
+        var(--blue) 65%,
+        var(--blue-shadow) 65%
+      );
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 35%;
+      height: 35%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  & .shoulder-a-container {
+    position: absolute;
+    left: 50%;
+    bottom: 39%;
+    width: 23%;
+    height: 14%;
+    display: flex;
+    justify-content: space-between;
+    transform: translate(-50%);
+    z-index: 9;
+
+    & .shoulder {
+      background: var(--main-shadow);
+      width: 50%;
+      height: 100%;
+      border-radius: 35% 78% 30% 70% / 30% 0% 0% 75%;
+    }
+
+    & .shoulder.r {
+      border-radius: 78% 35% 70% 30% / 0% 30% 75% 0%;
+    }
+  }
+
+  & .shoulder-b-container {
+    position: absolute;
+    left: 50%;
+    bottom: 42%;
+    width: 26%;
+    height: 9%;
+    display: flex;
+    justify-content: space-between;
+    transform: translate(-50%);
+    z-index: 8;
+
+    & .shoulder {
+      background: var(--main-color);
+      width: 50%;
+      height: 100%;
+      border-radius: 35% 78% 30% 70% / 30% 0% 0% 75%;
+    }
+
+    & .shoulder.r {
+      border-radius: 78% 35% 70% 30% / 0% 30% 75% 0%;
+    }
+  }
+
+  & .arms-container {
+    position: absolute;
+    top: 51%;
+    width: 38%;
+    height: 17%;
+    display: flex;
+    justify-content: space-between;
+    animation: robotB-arms-animation 12s 1s infinite;
+
+    & .arm {
+      display: block;
+      width: 15%;
+      height: 85%;
+      border: solid 0.5rem var(--secondary-color);
+      border-radius: 100% 0% 0% 100% / 100% 100% 0% 0%;
+      border-bottom: transparent;
+      border-right: transparent;
+    }
+
+    & .arm.r {
+      border-left: transparent;
+      border-right: solid 0.5rem var(--secondary-color);
+      border-radius: 0% 100% 0% 100% / 100% 100% 0% 0%;
+    }
+  }
+
+  & .hands-container {
+    position: absolute;
+    top: 65%;
+    width: 40.4%;
+    height: 6%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+
+    & .hand {
+      background: var(--main-color);
+      background: radial-gradient(
+        var(--main-shadow) 30%,
+        var(--main-color) 30%
+      );
+      display: block;
+      width: 10.98%;
+      height: 100%;
+      border-radius: 50%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 60%;
+        width: 8%;
+        height: 80%;
+        border: solid 0.21rem var(--secondary-color);
+        border-bottom: solid 0.21rem #fff;
+        border-radius: 25% 25% 30% 30% / 60% 50% 50% 50%;
+        z-index: -1;
+      }
+
+      &::after {
+        content: "";
+        background: var(--secondary-shadow);
+        position: absolute;
+        bottom: -65%;
+        left: 89.4%;
+        width: 2.5%;
+        height: 25%;
+        border-radius: 50%;
+        box-shadow: 0.88rem 0px 0px 0px var(--secondary-shadow);
+      }
+    }
+
+    & .hand.r {
+      &::after {
+        content: "";
+        background: var(--secondary-shadow);
+        position: absolute;
+        bottom: -65%;
+        left: 0.5%;
+        width: 2.5%;
+        height: 25%;
+        border-radius: 50%;
+        box-shadow: 0.87rem 0px 0px 0px var(--secondary-shadow);
+      }
+    }
+
+    & .handshake {
+      animation: robotB-handshake 10s infinite;
+    }
+  }
+
+  & .leg {
+    background: var(--main-shadow);
+    position: absolute;
+    left: 50%;
+    bottom: 28%;
+    width: 8%;
+    height: 8%;
+    border-radius: 0% 0% 50% 49% / 0% 0% 90% 90%;
+    transform: translate(-50%);
+
+    &::before {
+      content: "";
+      background: var(--main-color);
+      position: absolute;
+      left: 50%;
+      bottom: -55%;
+      width: 25%;
+      height: 60%;
+      transform: translate(-50%);
+    }
+  }
+
+  & .wheel {
+    position: absolute;
+    bottom: 2.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    transform: rotate(deg50);
+    z-index: 2;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -1%;
+      width: 2rem;
+      height: 1rem;
+      border: solid 0.2rem var(--main-shadow);
+      border-radius: 50% 50% 0% 100% / 100% 100% 0% 0%;
+      border-bottom: transparent;
+      transform: translate(-50%);
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      background: linear-gradient(
+        to left,
+        var(--secondary-shadow) 50%,
+        var(--secondary-color) 50%
+      );
+      position: absolute;
+      left: 50%;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      transform: translate(-50%);
+    }
+
+    & .ring {
+      background: var(--main-color);
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      place-content: center;
+      z-index: 2;
+
+      &::before {
+        content: "";
+        background: var(--main-shadow);
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  & .shadow {
+    background: var(--shadow);
+    position: absolute;
+    bottom: 10.5%;
+    width: 11%;
+    height: 3.5%;
+    border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
+  }
+}
+
+@keyframes robotB-eyes {
+  0% {
+    transform: scale(1, 1);
+  }
+  5% {
+    transform: scale(1.1, 0.5);
+    border-color: #0035ff;
+  }
+  10% {
+    border-color: #48bff7;
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: translateX(0.1rem);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes robotB-arms-animation {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 0.9);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  75% {
+    transform: scale(1, 0.9);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

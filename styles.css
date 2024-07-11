@@ -1,0 +1,28 @@
+*,
+::bedore,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e2e8f0;
+  width: 99vw;
+  display: grid;
+  grid-template-columns: 400px;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0.5rem;
+  padding-top: 2rem;
+}
+
+.card {
+  position: relative;
+  background: #fff;
+  display: flex;
+  width: 400px;
+  height: 300px;
+  box-shadow: 1px -1px 26px -1px rgba(0, 0, 0, 0.75);
+  border-radius: 0.5rem;
+}
